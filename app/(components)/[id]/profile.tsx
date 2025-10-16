@@ -1,5 +1,4 @@
 import { CircleUserRound, LogOut } from "lucide-react"
-import Image from "next/image"
 
 export default function Profile({details}:{details: string[]}){
     return(

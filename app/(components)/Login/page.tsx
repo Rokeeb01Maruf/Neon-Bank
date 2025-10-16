@@ -76,14 +76,14 @@ export default function LogIn() {
         <div className="each-part">
           <p className="text-primary font-regular text-lg mb-2">Email</p>
           <input type="email" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
-            let me = e.target.value
+            const me = e.target.value
             setMail(me)
           }} placeholder="example@gmail.com" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg w-78 px-3 py-2 border-2" />
         </div>
         <div className="each-part mt-2">
           <p className="text-primary font-regular text-lg mb-2">Password</p>
           <input type="password" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
-            let me = e.target.value
+            const = e.target.value
             setPassword(me)
           }} maxLength={10} name="password" placeholder="********" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg w-78 px-3 py-2 border-2" />
         </div>

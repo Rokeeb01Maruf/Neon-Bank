@@ -115,7 +115,6 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({login: error ,error: error.code})
         }else{
             const id = data.user.id
-            const mail = data.user.email
             const details = await supabase
             .from('users')
             .select('nickName')
@@ -202,7 +201,7 @@ export async function POST(req: NextRequest) {
             if(error){
                 return NextResponse.json({error: error.code})
             }else{
-                let them = data.accountBalance
+                const them = data.accountBalance
                 const me = body.data.lAmount + them
                 const user = await supabase
                 .from("users")
@@ -233,7 +232,7 @@ export async function POST(req: NextRequest) {
             if(error){
                 return NextResponse.json({error: error.code})
             }else{
-                let them = data.accountBalance
+                const them = data.accountBalance
                 const me = them - body.money
                 const user = await supabase
                 .from("users")
@@ -282,7 +281,7 @@ export async function POST(req: NextRequest) {
             }else if(data){
                 const array = data?.transfer_details
                 if(array.length == 5){
-                    const oldArray = array.pop()
+                    array.pop()
                     const newArray = [body, ...array]
                     const update = await supabase.from("transfer").update({transfer_details: newArray}).eq("id", id).select()
                     if(update.data){

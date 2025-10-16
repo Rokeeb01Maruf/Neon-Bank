@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
             mail = formData.email
             if(error){
                 return NextResponse.json({error: error.message})
-            }else{
+            }else if(data){
                 return NextResponse.json({answer: "success"})
             }
         }

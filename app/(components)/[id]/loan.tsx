@@ -94,7 +94,7 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
                             <div className="px-1 w-full h-7 outline-0 border border-primary">&#8358; {eAmount}.00</div>
                             <button onClick={()=>{
                                 if(amount != 0 && duration != 0 && type != ''){
-                                    handleLoan
+                                    handleLoan()
                                     setActivate(true)
                                     setStatus(false)
                                     setLoaning('Apply')

@@ -1,5 +1,5 @@
 'use client'
-import {EyeIcon, EyeOff, Check, X} from "lucide-react"
+import {EyeIcon, EyeOff} from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 export default function SignUp(){

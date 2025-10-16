@@ -83,7 +83,7 @@ export default function LogIn() {
         <div className="each-part mt-2">
           <p className="text-primary font-regular text-lg mb-2">Password</p>
           <input type="password" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
-            const = e.target.value
+            const me = e.target.value
             setPassword(me)
           }} maxLength={10} name="password" placeholder="********" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg w-78 px-3 py-2 border-2" />
         </div>

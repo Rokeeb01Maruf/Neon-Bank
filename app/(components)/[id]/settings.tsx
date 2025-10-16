@@ -6,7 +6,6 @@ export default function Settings({details, onName, onMail, onPhone }:{details: s
     const [mail, setmail] = useState('')
     const [phone, setPhone] = useState('')
     const [update, setUpdate] = useState([false, false, false])
-    const p = details[1].slice(4).slice(-10)
     useEffect(()=>{
         if(update[0]){
             onName(name)

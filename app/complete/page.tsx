@@ -12,7 +12,6 @@ export default function Complete() {
     const [show, setShow] = useState('hidden')
     const [disp, setDisplay] = useState(["block","hidden"])
     const[p, setP] = useState('')
-    const[submit, setSubmit] = useState('Complete')
     const [check, setCheck] = useState(false)
     const [style, setStyle] = useState('mt-2 w-78 transition rounded-sm  font-bolds py-2 text-gray-600 bg-blue-200 cursor-arrow')
     const [data, setData] = useState<{Fullname: string, Nickname: string, phone: string, Address: string, BVN: string, Date: string, Profile: File | undefined
@@ -276,7 +275,7 @@ export default function Complete() {
           <input type="checkbox" onClick={()=>setCheck(!check)} className="font-regular mr-1 w-4 text-sm mb-2" />
           <a href="" className="text-black font-regular text-sm mb-2">Terms and Conditions</a>
         </div>
-        <button type="submit" onClick={handleSubmit} className={`my-2 w-78 ${style} rounded-sm  font-bolds py-2`}>{submit}</button>
+        <button type="submit" onClick={handleSubmit} className={`my-2 w-78 ${style} rounded-sm  font-bolds py-2`}>Complete</button>
         <button onClick={handleB} className='bg-secondary block transition duration-300 hover:bg-primary hover:text-blue-300 text-white px-4 py-1.5 rounded-sm cursor-pointer font-bolds '>Back</button>
         </div>
         <p className={`absolute ${show} bg-white text-red-600 top-[7vh] text-shadow-2xs font-light rounded-sm px-1`}>{p}</p>

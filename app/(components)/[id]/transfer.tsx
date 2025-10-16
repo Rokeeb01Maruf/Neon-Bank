@@ -118,7 +118,7 @@ export default function Transfer({num, name, bal, update}:{num: string, name: st
                     <fieldset className="border rounded-lg px-2">
                     <legend className="font-bolds">Recipient</legend>
                     <div className="eachfield cursor-pointer w-full mb-1 relative">
-                        <p className="pb-2 font-regular">Recipient's bank</p>
+                        <p className="pb-2 font-regular">Recipient&apos;s bank</p>
                         {
                             show == 1 ? (
                                 <input type="text" onInput={handleBank} placeholder="Neon Bank" className="w-full outline-0 border-2 hover:bg-gray-200 border-gray-600 px-2 py-1 rounded-lg" />

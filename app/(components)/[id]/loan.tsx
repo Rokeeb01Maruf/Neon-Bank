@@ -4,7 +4,7 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
     const [amount, setAmount] = useState<number>(0)
     const [duration, setDuration] = useState<number>(0) 
     const [type, setType] = useState<string>('')
-    const [eAmount, setE] = useState<number>(0)
+    const [eAmount, setEAmount] = useState<number>(0)
     const [loan, setLoan] = useState<string>('')
     const [activated, setActivate] = useState(false)
     const [loaning, setLoaning] = useState('Apply')

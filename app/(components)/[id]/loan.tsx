@@ -25,15 +25,13 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
         if(activated == true){
             const loans :{Date: string, estimatedAmount: number, lAmount: number}= {Date: loan, estimatedAmount: eAmount, lAmount: amount}
             onActivate(loans)
+            setActivate(false);
         }
     },[activated])
-    useEffect(()=>{
-        if(status == true){
-            setLoaning('Applying')
-        }else{
-            setLoaning('Apply')
-        }
-    },[status])
+    useEffect(() => {
+      setLoaning(status ? 'Applying' : 'Apply');
+    }, [status]);
+
     return(
         <div>
             {

@@ -9,28 +9,18 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
     const [activated, setActivate] = useState(false)
     const [loaning, setLoaning] = useState('Apply')
     const [status, setStatus] = useState(false)
-    useEffect(()=>{
-        const [p, r] : [p:number , r:number] = [Number(amount), Number(duration)]
-        if(type == 'Personal Loan'){
-            setE(p+((p*r*2)/100))
-            const today = new Date()
-            today.setDate(today.getDate() + r)
-            const me = today.toLocaleDateString()
-            setLoan(me)
-        }else if(type == 'Educational Loan'){
-            setE(p+((p*r*1.8)/100))
-            const today = new Date()
-            today.setDate(today.getDate() + r)
-            const me = today.toLocaleDateString()
-            setLoan(me)
-        }else if(type == 'Business Loan'){
-            setE(p+((p*r*2.1)/100))
-            const today = new Date()
-            today.setDate(today.getDate() + r)
-            const me = today.toLocaleDateString()
-            setLoan(me)
-        }
-    },[amount, duration, type])
+    useEffect(() => {
+      const [p, r]: [number, number] = [Number(amount), Number(duration)];
+      const today = new Date();
+      today.setDate(today.getDate() + r);
+      const dueDate = today.toLocaleDateString();
+    
+      if (type === 'Personal Loan') setEAmount(p + (p * r * 2) / 100);
+      else if (type === 'Educational Loan') setEAmount(p + (p * r * 1.8) / 100);
+      else if (type === 'Business Loan') setEAmount(p + (p * r * 2.1) / 100);
+    
+      setLoan(dueDate);
+}, [amount, duration, type]);
     useEffect(()=>{
         if(activated == true){
             const loans :{Date: string, estimatedAmount: number, lAmount: number}= {Date: loan, estimatedAmount: eAmount, lAmount: amount}
@@ -67,7 +57,7 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
                         <div className="eachfield cursor-pointer w-full mb-4">
                             <p className="pb-2 font-bolds">Duration</p>
                             <select onChange={(e: React.ChangeEvent<HTMLSelectElement>)=>{
-                                const value = e.target.value
+                                const value = Number(e.target.value)
                                 setDuration(value)
                             }}name="Loan type" className="w-full outline-0 border-2 hover:bg-gray-200 border-gray-600 px-2 py-1 rounded-lg" id="">
                                 <option value={0} >Select days</option>

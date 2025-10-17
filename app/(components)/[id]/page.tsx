@@ -120,12 +120,6 @@ export default function Main(){
               setUrl(me.profile);
               setPhone(me.phone);
               setMail(me.email);
-        
-              if (me.loanAmount !== 0 || me.loanDate !== "") {
-                setLoaned(0);
-              } else {
-                setLoaned(1);
-              }
             } else {
               router.push("../Login");
             }

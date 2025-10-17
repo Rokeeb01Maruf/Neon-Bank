@@ -54,29 +54,38 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
                     <div className="flex-3/4 pr-5">
                         <div className="eachfield cursor-pointer w-full mb-4">
                             <p className="pb-2 font-bolds">Loan amount</p>
-                            <select name="Loan type" className="w-full outline-0 border-2 hover:bg-gray-200 border-gray-600 px-2 py-1 rounded-lg" id="">
+                            <select onChange={(e: React.ChangeEvent<HTMLSelectElement>)=>{
+                                const value = e.target.value
+                                setAmount(Number(value))
+                                }}name="Loan type" className="w-full outline-0 border-2 hover:bg-gray-200 border-gray-600 px-2 py-1 rounded-lg" id="">
                                 <option value={0.00}>Select Amount</option>
-                                <option value={1000.00} onClick={()=>{setAmount(1000.00)}}>&#8358; 1,000.00</option>
-                                <option value={3000.00} onClick={()=>{setAmount(3000.00)}}>&#8358; 3,000.00</option>
-                                <option value={5000.00} onClick={()=>{setAmount(5000.00)}}>&#8358; 5,000.00</option>
+                                <option value={1000.00} >&#8358; 1,000.00</option>
+                                <option value={3000.00}>&#8358; 3,000.00</option>
+                                <option value={5000.00}>&#8358; 5,000.00</option>
                             </select>
                         </div>
                         <div className="eachfield cursor-pointer w-full mb-4">
                             <p className="pb-2 font-bolds">Duration</p>
-                            <select name="Loan type" className="w-full outline-0 border-2 hover:bg-gray-200 border-gray-600 px-2 py-1 rounded-lg" id="">
-                                <option value="30" onClick={()=>{setDuration(0)}}>Select days</option>
-                                <option value="30" onClick={()=>{setDuration(30)}}>30 days</option>
-                                <option value="90" onClick={()=>{setDuration(90)}}>3 Months</option>
-                                <option value="180" onClick={()=>{setDuration(180)}}>6 Months</option>
+                            <select onChange={(e: React.ChangeEvent<HTMLSelectElement>)=>{
+                                const value = e.target.value
+                                setDuration(value)
+                            }}name="Loan type" className="w-full outline-0 border-2 hover:bg-gray-200 border-gray-600 px-2 py-1 rounded-lg" id="">
+                                <option value={0} >Select days</option>
+                                <option value={30} >30 days</option>
+                                <option value={90} >3 Months</option>
+                                <option value={180} >6 Months</option>
                             </select>
                         </div>
                         <div className="eachfield cursor-pointer w-full mb-4">
                             <p className="pb-2 font-bolds">Loan type</p>
-                            <select name="Loan type" className="w-full outline-0 border-2 hover:bg-gray-200 border-gray-600 px-2 py-1 rounded-lg" id="">
-                                <option value="" onClick={()=>{setType('')}}>Select Type</option>
-                                <option value="Personal Loan" onClick={()=>{setType('Personal Loan')}}>Personal Loan</option>
-                                <option value="Education Loan" onClick={()=>{setType('Educational Loan')}}>Educational Loan</option>
-                                <option value="Business Loan" onClick={()=>{setType('Business Loan')}}>Business Loan</option>
+                            <select name="Loan type" onChange={(e: React.ChangeEvent<HTMLSelectElement>)=>{
+                                const value = e.target.value
+                                setType(String(value))
+                                }}className="w-full outline-0 border-2 hover:bg-gray-200 border-gray-600 px-2 py-1 rounded-lg" id="">
+                                <option value="">Select Type</option>
+                                <option value="Personal Loan">Personal Loan</option>
+                                <option value="Educational Loan">Educational Loan</option>
+                                <option value="Business Loan">Business Loan</option>
                             </select>
                         </div>
                         <p className="font-bolds mt-10">Estimated loan amount: <span className="text-secondary">&#8358; {eAmount?.toLocaleString()}.00</span></p>
@@ -85,11 +94,11 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
                         <p className="font-bolds">Loan summary</p>
                         <div className="goal border border-primary py-2 px-4">
                             <p className="font-regular">Loan amount</p>
-                            <input type="text" value={amount} disabled className="w-full px-1 h-6 outline-0 border border-primary"/>
+                            <input type="text" value={amount} readOnly className="w-full px-1 h-6 outline-0 border border-primary"/>
                             <p className="mt-2 font-regular">Loan duration</p>
-                            <input type="text" value={`${duration} days`} disabled className="w-full px-1 h-6 outline-0 border border-primary"/>
+                            <input type="text" value={`${duration} days`} readOnly className="w-full px-1 h-6 outline-0 border border-primary"/>
                             <p className="mt-2 font-regular">Loan type</p>
-                            <input type="text" value={type} disabled className="w-full px-1 h-6 outline-0 border border-primary"/>
+                            <input type="text" value={type} readOnly className="w-full px-1 h-6 outline-0 border border-primary"/>
                             <p className="mt-2 font-regular">Estimated amount</p>
                             <div className="px-1 w-full h-7 outline-0 border border-primary">&#8358; {eAmount}.00</div>
                             <button onClick={()=>{

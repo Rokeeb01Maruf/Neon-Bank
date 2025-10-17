@@ -117,8 +117,10 @@ export default function Main(){
                         setLoaned(1)
                     }
                 }
-                else{
+                else if(!data){
                     router.push('../Login')
+                }else{
+                    router.push("../Login")
                 }
             })
         }

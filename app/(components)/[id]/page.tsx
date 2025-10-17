@@ -17,7 +17,6 @@ export default function Main(){
     const [hidden, setHidden] = useState('hidden')
     const router = useRouter()
     const {id} = useParams()
-    const [loaned, setLoaned] = useState(1)
     const [transfer, setTransfer] = useState<[{bank: string, name: string, amount: number, number: string}] | []>([])
     const [loan, setLoan] = useState({estimatedLoan: 0, date: ''})
     const [state, setState] = useState('')
@@ -228,7 +227,7 @@ export default function Main(){
                     nav[0] == "block"?(<Dashboard bal={accountBal} transfer = {transfer} handleSavings={Save} handleTransfer={Trans} handleLoan={Loans}/>):
                     nav[1] == "block"?(<Transfer update={()=>getUser()} num={accountNum} name={accountName} bal={accountBal}/>):
                     nav[2] == "block"?(<Savings num={accountNum}/>):
-                    nav[3] == "block"?(<Loan loanDetails={loan} loaned={loaned} onActivate={activateLoan} loanState={state} payed={()=>{
+                    nav[3] == "block"?(<Loan loanDetails={loan} onActivate={activateLoan} loanState={state} payed={()=>{
                         const payBack = async() =>{
                             await fetch('../api/logic?action=payback',{
                                 method: "POST",
@@ -238,7 +237,6 @@ export default function Main(){
                             .then(data=>{
                                 if(data.answer == "payed"){
                                     getUser()
-                                    setLoaned(1)
                                 }else{
                                     console.log(data)
                                 }
@@ -246,7 +244,6 @@ export default function Main(){
                         }
                         payBack()
                     }} handleLoan={()=>{
-                        setLoaned(0)
                         setState('Pending')
                         setTimeout(()=>{
                             setState('Approved')

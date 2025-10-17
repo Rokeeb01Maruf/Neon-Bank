@@ -25,6 +25,7 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
         if(activated == true){
             const loans :{Date: string, estimatedAmount: number, lAmount: number}= {Date: loan, estimatedAmount: eAmount, lAmount: amount}
             onActivate(loans)
+            setActivate(false)
         }
     },[activated])
     useEffect(() => {
@@ -34,7 +35,7 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
     return(
         <div>
             {
-                loaned == 1?(
+                (loanDetails.date == "" || loanDetails.estimatedLoan == 0)?(
                 <div>
                 <p className="font-bolds text-2xl mb-2">Loan</p>
                 <div className="loan-form flex max-sm:flex-col">
@@ -102,7 +103,7 @@ export default function Loan({loanDetails, loaned, handleLoan, payed, loanState,
             </div>):
             (<div className="w-full min-h-50">
                 <p className="font-bolds text-2xl mb-2">Loan</p>
-                {loaned == 0? (<div className="w-full mt-5">
+                {(loanDetails.date != "" || loanDetails.estimatedLoan != 0)? (<div className="w-full mt-5">
                     <div className="flex items-center bg-red-50 font-regular my-1 p-2 justify-between">
                         <p className="font-bolds">&#8358; {loanDetails.estimatedLoan}.00</p>
                         <div className="flex gap-x-1">

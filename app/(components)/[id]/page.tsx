@@ -88,42 +88,54 @@ export default function Main(){
             }
         })
     }
-    const getUser = async()=>{
-            await fetch("../api/logic?action=getuser",{
-                method: "POST",
-                body: JSON.stringify({id: id})
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                let me;
-                if(data.data){
-                    if(data.data[1]){
-                        const mine = data?.data[1]
-                        setTransfer(mine.transfer_details)
-                        me = data.data[0]
-                    }else{
-                        me = data.data
-                    }
-                    setAccountBal(me.accountBalance)
-                    setAccountName(me.fullname)
-                    setAccountNum(me.accountNumber)
-                    setLoan({estimatedLoan: me.loanAmount, date: me.loanDate})
-                    setUrl(me.profile)
-                    setPhone(me.phone)
-                    setMail(me.email)
-                    if(loan.estimatedLoan != 0 || loan.date != "" ){
-                        setLoaned(0)
-                    }else{
-                        setLoaned(1)
-                    }
-                }
-                else if(!data){
-                    router.push('../Login')
-                }else{
-                    router.push("../Login")
-                }
-            })
-        }
+    const getUser = async () => {
+          try {
+            const res = await fetch("../api/logic?action=getuser", {
+              method: "POST",
+              body: JSON.stringify({ id }),
+              headers: { "Content-Type": "application/json" },
+            });
+        
+            // If the server actually responds, but not successfully
+            if (!res.ok) {
+              router.push("../Login");
+              return;
+            }
+        
+            const data = await res.json();
+        
+            if (data?.data) {
+              let me;
+              if (data.data[1]) {
+                const mine = data.data[1];
+                setTransfer(mine.transfer_details);
+                me = data.data[0];
+              } else {
+                me = data.data;
+              }
+        
+              setAccountBal(me.accountBalance);
+              setAccountName(me.fullname);
+              setAccountNum(me.accountNumber);
+              setLoan({ estimatedLoan: me.loanAmount, date: me.loanDate });
+              setUrl(me.profile);
+              setPhone(me.phone);
+              setMail(me.email);
+        
+              if (me.loanAmount !== 0 || me.loanDate !== "") {
+                setLoaned(0);
+              } else {
+                setLoaned(1);
+              }
+            } else {
+              router.push("../Login");
+            }
+          } catch (error) {
+            console.error("Server not responding:", error);
+            router.push("../Login"); // fallback for no server response
+          }
+        };
+
     useEffect(()=>{
         getUser()
     },[])

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default function Loan({loanDetails, loaned, handleLoan, payed, loanState, onActivate}:{loanDetails: {estimatedLoan: number, date: string}, loaned:number, onActivate: (data: {lAmount: number, estimatedAmount: number, Date: string})=> void, payed: ()=> void,handleLoan: ()=> void, loanState: string}){
+export default function Loan({loanDetails, handleLoan, payed, loanState, onActivate}:{loanDetails: {estimatedLoan: number, date: string}, onActivate: (data: {lAmount: number, estimatedAmount: number, Date: string})=> void, payed: ()=> void,handleLoan: ()=> void, loanState: string}){
     const [amount, setAmount] = useState<number>(0)
     const [duration, setDuration] = useState<number>(0) 
     const [type, setType] = useState<string>('')

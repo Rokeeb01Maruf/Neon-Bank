@@ -7,7 +7,7 @@ export default function Home() {
   const [show, setShow] = useState('hidden')
   const [switc, setSwitch] = useState(1)
   return (
-    <div className="bg-light min-h-screen">
+    <div className="bg-light min-h-screen max-w-screen overflow-x-hidden">
       <header className="h-16 bg-primary text-white flex px-25 max-[1134]:px-20 max-[871]:px-15 max-[809]:px-10 max-[500]:px-2.5 justify-between items-center">
         <Link href='' className="logo flex gap-x-2.5">
           <img src="./Images/Neon-light.png" className="w-6 h-6" alt="" />

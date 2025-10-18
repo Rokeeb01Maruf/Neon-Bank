@@ -147,7 +147,7 @@ export default function Main(){
             <div onClick={()=>{
                 setMenu(!menu)
                 setHidden("hidden")
-            }} className={`bg-[rgba(0,0,0,0.7)] w-full h-full cursor-pointer absolute ${hidden == "hidden" ? "max-[966]:hidden":"flex" }`}/>
+            }} className={`bg-[rgba(0,0,0,0.7)] w-full h-full cursor-pointer absolute ${hidden == "hidden" && "hidden"}`}/>
             <aside className={`flex-1/4 max-[967]:absolute ${hidden == "hidden" ? "max-[966]:hidden":"flex" }
              duration-300 max-[966]:z-10 max-[984]:max-w-46 
                 max-[1030]:max-w-60 max-[1030]:pl-10 max-[1024]:max-w-55 max-[1024]:pl-8 max-[1006]:max-w-50 pl-12 min-h-screen

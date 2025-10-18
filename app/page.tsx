@@ -8,7 +8,7 @@ export default function Home() {
   const [switc, setSwitch] = useState(1)
   return (
     <div className="bg-light min-h-screen">
-      <header className="h-16 bg-primary text-white flex px-25 max-[1134]:px-20 max-[871]:px-15 max-[809]:px-10 justify-between items-center">
+      <header className="h-16 bg-primary text-white flex px-25 max-[1134]:px-20 max-[871]:px-15 max-[809]:px-10 max-[500]:px-5 justify-between items-center">
         <Link href='' className="logo flex gap-x-2.5">
           <img src="./Images/Neon-light.png" className="w-6 h-6" alt="" />
           <h3 className="font-boldser text-xl">Neon Bank</h3>
@@ -35,7 +35,7 @@ export default function Home() {
           )
         }
       </header>
-      <main className="flex mx-25 max-[1134]:mx-20 max-[871]:mx-15 max-[809]:mx-10 max-[981]:flex-col-reverse max-[500]:flex-col">
+      <main className="flex mx-25 max-[1134]:mx-20 max-[871]:mx-15 max-[809]:mx-10 max-[981]:flex-col-reverse max-[500]:flex-col-reverse">
         <div className="hero">
           <h2 className="font-boldser text-primary max-sm:text-2xl max-[871]:text-3xl max-[871]:py-6  py-10 text-4xl">Fortified security, seamless banking</h2>
           <p className="font-regular text-hash w-full :">We provide a safe and secured environment for you to make transfers, payments and track your accounteasily with our internet banking anytimeand anywhere. Sign up or log in to our internet banking now.</p>

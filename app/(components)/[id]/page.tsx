@@ -31,14 +31,20 @@ export default function Main(){
     function Save(){
         setNav(["hidden","hidden", "block","hidden","hidden","hidden", "hidden" ])
         setBg(["","","bg-light","","",""])
+        setMenu(!menu)
+        setHidden("hidden")
     }
     function Trans(){
         setNav(["hidden","block", "hidden","hidden","hidden","hidden", "hidden" ])
         setBg(["","bg-light","","","",""])
+        setMenu(!menu)
+        setHidden("hidden")
     }
     function Loans(){
         setNav(["hidden","hidden", "hidden","block","hidden","hidden", "hidden" ])
         setBg(["","","","bg-light","",""])
+        setMenu(!menu)
+        setHidden("hidden")
     }
     const handleName= async (data: string)=>{
         await fetch('../api/logic?action=name',{method: "POST", body: JSON.stringify({name: data})})
@@ -138,6 +144,10 @@ export default function Main(){
          max-[1108]:mx-0 max-[1320]:mx-35 max-[1306]:mx-32 max-[1284]:mx-29 max-[1255]:mx-25 max-[1224]:mx-20 
          gap-x-12.5 mx-37.5 border-x-2 border-primary
           bg-light">
+            <div onClick={()=>{
+                setMenu(!menu)
+                setHidden("hidden")
+            }} className={`bg-[rgba(0,0,0,0.7)] w-full h-full cursor-pointer absolute ${hidden == "hidden" ? "max-[966]:hidden":"flex" }`}/>
             <aside className={`flex-1/4 max-[967]:absolute ${hidden == "hidden" ? "max-[966]:hidden":"flex" }
              duration-300 max-[966]:z-10 max-[984]:max-w-46 
                 max-[1030]:max-w-60 max-[1030]:pl-10 max-[1024]:max-w-55 max-[1024]:pl-8 max-[1006]:max-w-50 pl-12 min-h-screen
@@ -150,7 +160,9 @@ export default function Main(){
                     </Link>
                     <button onClick={()=>{
                         setNav(["block","hidden", "hidden","hidden","hidden","hidden", "hidden" ])
-                        setBg(["bg-light","","","","",""])     
+                        setBg(["bg-light","","","","",""])
+                        setMenu(!menu)
+                        setHidden("hidden")
                     }} className={`cursor-pointer flex gap-x-2.5 mt-12.5 w-37 items-center px-5 py-2 hover:bg-light ${bg[0]}`}>
                         <HomeIcon width={18} height={18} className="text-black"/>
                         <p className="text-black font-bolds">Dashboard</p>
@@ -161,7 +173,9 @@ export default function Main(){
                     </button>
                     <button onClick={()=>{
                         setNav(["hidden","hidden", "block","hidden","hidden","hidden", "hidden" ])
-                        setBg(["","","bg-light","","",""])     
+                        setBg(["","","bg-light","","",""])
+                        setMenu(!menu)
+                        setHidden("hidden")
                     }} className={`cursor-pointer flex gap-x-2.5 mt-5 w-37 items-center px-5 py-2 hover:bg-light ${bg[2]}`}>
                         <PiggyBank width={18} height={18} className="text-black"/>
                         <p className="text-black font-bolds">Savings</p>
@@ -172,7 +186,9 @@ export default function Main(){
                     </button>
                     <button onClick={()=>{
                         setNav(["hidden","hidden", "hidden","hidden","block", "hidden" ])
-                        setBg(["","","","","bg-light",""])     
+                        setBg(["","","","","bg-light",""]) 
+                        setMenu(!menu)
+                        setHidden("hidden")
                     }} className={`cursor-pointer flex gap-x-2.5 mt-5 w-37 items-center px-5 py-2 hover:bg-light ${bg[4]}`}>
                         <Settings width={18} height={18} className="text-black"/>
                         <p className="text-black font-bolds">Settings</p>
@@ -180,7 +196,9 @@ export default function Main(){
                 </div>
                 <button onClick={()=>{
                     setNav(["hidden","hidden", "hidden","hidden","hidden", "block" ])
-                    setBg(["","","","","","bg-secondary text-white"])     
+                    setBg(["","","","","","bg-secondary text-white"])
+                    setMenu(!menu)
+                    setHidden("hidden")
                 }} className={`cursor-pointer ${bg[5]} mt-[80%] flex gap-x-2.5 w-37 items-center rounded-lg text-black px-5  py-2 [w-31.25] hover:bg-secondary hover:text-white`}>
                     {
                         url == ''? (<CircleUser width={18} height={18}/>):

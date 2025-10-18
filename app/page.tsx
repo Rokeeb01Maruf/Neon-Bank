@@ -41,7 +41,7 @@ export default function Home() {
           <p className="font-regular text-hash w-full :">We provide a safe and secured environment for you to make transfers, payments and track your accounteasily with our internet banking anytimeand anywhere. Sign up or log in to our internet banking now.</p>
           <button className="my-5 font-bolds hover:bg-blue-400 transition duration-500 hover:text-primary p bg-secondary rounded-3xl px-5 py-2 cursor-pointer text-white">Get Started</button>
         </div>
-        <img src="/Images/hero.png" className="rotate-z-12 max-[981]:w-[500] max-[500]:hidden  max-[981]:mx-auto  w-91.5  min-[980]:animate-roll" alt="" />
+        <img src="/Images/hero.png" className="rotate-z-12 max-[981]:w-[500] max-[500]:w-70  max-[981]:mx-auto  w-91.5  min-[980]:animate-roll" alt="" />
       </main>
       <aside className="mx-25 max-[1134]:mx-20 max-[871]:mx-15 max-[809]:mx-10">
         <h2 className="font-boldser text-primary max-[871]:text-3xl max-sm:text-2xl text-4xl">Our Services</h2>

@@ -1,6 +1,17 @@
 import { CircleUserRound, LogOut } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export default function Profile({details}:{details: string[]}){
+    const router = useRouter()
+    const logout = async()=>{
+        await fetch('../api/logic?action=logout',{method: "GET"})
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.logout === "successfully"){
+                router.push("../")
+            }
+        })
+    }
     return(
         <div className="min-h-screen max-h-screen">
             <p className="font-bolds text-2xl">Profile</p>
@@ -36,7 +47,7 @@ export default function Profile({details}:{details: string[]}){
                     <p className="font-bolds">Account type:</p>
                     <p>Savings</p>
                 </div>
-                <button className="items font-regular mt-30 cursor-pointer flex gap-x-2">
+                <button onClick={logout} className="items font-regular mt-30 cursor-pointer flex gap-x-2">
                     <LogOut />
                     <p>Log Out</p>
                 </button>

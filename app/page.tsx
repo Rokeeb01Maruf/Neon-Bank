@@ -35,7 +35,7 @@ export default function Home() {
           )
         }
       </header>
-      <main className="flex mx-25 max-[1134]:mx-20 max-[871]:mx-15 max-[809]:mx-10 max-[500]:mx-2.5 max-[981]:flex-col-">
+      <main className="flex mx-25 max-[1134]:mx-20 max-[871]:mx-15 max-[809]:mx-10 max-[500]:mx-2.5 max-[981]:flex-col">
         <div className="hero">
           <h2 className="font-boldser text-primary max-sm:text-2xl max-[871]:text-3xl max-[871]:py-6  py-10 text-4xl">Fortified security, seamless banking</h2>
           <p className="font-regular text-hash w-full :">We provide a safe and secured environment for you to make transfers, payments and track your accounteasily with our internet banking anytimeand anywhere. Sign up or log in to our internet banking now.</p>

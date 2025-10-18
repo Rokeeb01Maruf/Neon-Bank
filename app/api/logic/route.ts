@@ -328,4 +328,13 @@ export async function GET(req:NextRequest) {
             return  NextResponse.json({in: true})
         }
     }
+
+    if(action == "logout"){
+        const {error} = await supabase.auth.signOut()
+        if(error){
+            return NextResponse.json({error: error})
+        }else{
+            return NextResponse.json({logout: "successfully"})
+        }
+    }
 }

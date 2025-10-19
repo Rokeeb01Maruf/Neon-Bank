@@ -65,8 +65,9 @@ export default function SignUp(){
         <h2 className="font-boldser text-3xl mb-2">Neon Bank</h2>
         <p className="font-light text-lg">Fortified security, seamless banking</p>
       </div>
-      <form action="" className="right bg-light flex-50 min-h-screen flex flex-col relative justify-center items-center " method="post">
-        {
+      <form action="" className="right bg-light flex-50 min-h-screen flex flex-col justify-center items-center " method="post">
+        <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex relative">
+           {
           disp[0] ?(
           <div className="overLay absolute top-0 bottom-0 right-0 left-0 z-50 bg-white w-full h-full p-6 rounded-lg flex flex-col justify-center items-center">
           {disp[1]?(
@@ -77,7 +78,6 @@ export default function SignUp(){
         </div>
           ) : null
         }
-        <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex">
           <img src="./Images/Neon-dark.png" className="w-10 h-10" alt="" />
           <h3 className="font-boldser text-4xl">Neon Bank</h3>
         </div>

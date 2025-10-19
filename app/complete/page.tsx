@@ -162,15 +162,15 @@ export default function Complete() {
           }
   return (<>
     <div className={`container ${flex[0]} min-w-screen`}>
-      <div className="left bg-primary min-h-screen flex flex-col items-center justify-center text-white flex-50">
-        <img src="/Images/Neon-1.png" className="mb-5"  alt="logo" />
+      <div className="max-[800]:hidden left bg-primary h-screen flex flex-col items-center justify-center text-white flex-50">
+        <img src="/Images/Neon-1.png" className="mb-5 max-w-66.75"  alt="logo" />
         <h2 className="font-boldser text-3xl mb-2">Neon Bank</h2>
         <p className="font-light text-lg">Fortified security, seamless banking</p>
       </div>
-      <form className="right bg-light flex-50 min-h-screen flex flex-col justify-center items-center ">
+      <form className="right bg-light flex-50 min-h-screen flex flex-col justify-center items-center relative">
         {
           display[0] ?(
-          <div className="overLay absolute top-auto bottom-auto right-auto left-auto bg-white w-100 h-90 p-6 rounded-lg flex flex-col justify-center items-center">
+          <div className="overLay absolute top-0 left-0 bg-white w-full h-full h-90 p-6 rounded-lg flex flex-col justify-center items-center">
           {display[1] ?(
             <X strokeWidth={2} onClick={()=>setDisp(['','','','',''])} className="absolute cursor-pointer top-4 right-4"></X>
           ):null}
@@ -198,6 +198,10 @@ export default function Complete() {
         </div>
           ) : null
         }
+        <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex">
+          <img src="./Images/Neon-dark.png" className="w-10 h-10" alt="" />
+          <h3 className="font-boldser text-4xl">Neon Bank</h3>
+        </div>
         <h2 className="font-boldser text-3xl text-primary mt-3 mb-4">Finish setting up</h2>
         <div className={`personal ${disp[0]}`}>
           <div className="each-part mb-2">

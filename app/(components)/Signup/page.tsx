@@ -65,10 +65,10 @@ export default function SignUp(){
         <h2 className="font-boldser text-3xl mb-2">Neon Bank</h2>
         <p className="font-light text-lg">Fortified security, seamless banking</p>
       </div>
-      <form action="" className="right bg-light flex-50 min-h-screen flex flex-col justify-center items-center " method="post">
+      <form action="" className="right bg-light flex-50 min-h-screen flex flex-col relative justify-center items-center " method="post">
         {
           disp[0] ?(
-          <div className="overLay absolute top-auto bottom-auto right-auto left-auto z-50 bg-white w-100 h-90 p-6 rounded-lg flex flex-col justify-center items-center">
+          <div className="overLay absolute top-0 bottom-0 right-0 left-0 z-50 bg-white w-full h-full p-6 rounded-lg flex flex-col justify-center items-center">
           {disp[1]?(
             <div className="flex items-center justify-between h-16">
               <div className="w-16 h-16 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>

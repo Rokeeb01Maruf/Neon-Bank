@@ -65,93 +65,95 @@ export default function SignUp(){
         <h2 className="font-boldser text-3xl mb-2">Neon Bank</h2>
         <p className="font-light text-lg">Fortified security, seamless banking</p>
       </div>
-      <form action="" className="right bg-light flex-50 min-h-screen flex flex-col justify-center items-center " method="post">
-        <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex relative">
-           {
-          disp[0] ?(
-          <div className="overLay absolute top-0 bottom-0 right-0 left-0 z-50 bg-white w-full h-full p-6 rounded-lg flex flex-col justify-center items-center">
-          {disp[1]?(
-            <div className="flex items-center justify-between h-16">
-              <div className="w-16 h-16 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+      <form action="" className="right bg-light flex-50 min-h-screen flex justify-center items-center " method="post">
+        <div className="relative flex flex-col justify-center items-center">
+             {
+            disp[0] ?(
+            <div className="overLay absolute top-0 bottom-0 right-0 left-0 z-50 bg-white w-full h-full p-6 rounded-lg flex flex-col justify-center items-center">
+            {disp[1]?(
+              <div className="flex items-center justify-between h-16">
+                <div className="w-16 h-16 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+              </div>
+            ): null }
+          </div>
+            ) : null
+          }
+          <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex">
+            <img src="./Images/Neon-dark.png" className="w-10 h-10" alt="" />
+            <h3 className="font-boldser text-4xl">Neon Bank</h3>
+          </div>
+          <h2 className="font-boldser text-3xl text-primary mt-3 mb-4">Sign Up</h2>
+          <div className="data">
+            <div className="each-part mb-2">
+              <p className="text-primary font-regular text-lg mb-2">Email</p>
+              <input type="email" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
+                const val = e.target.value
+                const prevData = {...data}
+                prevData.email = val
+                setData(prevData)
+              }} placeholder="example@gmail.com" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg h-8 w-78 px-3 py-2 border-2" />
             </div>
-          ): null }
-        </div>
-          ) : null
-        }
-          <img src="./Images/Neon-dark.png" className="w-10 h-10" alt="" />
-          <h3 className="font-boldser text-4xl">Neon Bank</h3>
-        </div>
-        <h2 className="font-boldser text-3xl text-primary mt-3 mb-4">Sign Up</h2>
-        <div className="data">
-          <div className="each-part mb-2">
-            <p className="text-primary font-regular text-lg mb-2">Email</p>
-            <input type="email" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
-              const val = e.target.value
-              const prevData = {...data}
-              prevData.email = val
-              setData(prevData)
-            }} placeholder="example@gmail.com" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg h-8 w-78 px-3 py-2 border-2" />
-          </div>
-          <div className="each-part mb-2 relative">
-            <p className="text-primary font-regular text-lg mb-2">Create password</p>
-            <input type={`${type[0]}`} onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
-              const val = e.target.value
-              const prevData = {...data}
-              prevData.password = val
-              setData(prevData)
-            }} placeholder="**********" maxLength={10} className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg h-8 w-78 px-3 py-2 border-2" />
-            {
-              eye[0] == true?(<EyeIcon onClick={()=>{
-                const newEye = [...eye]
-                newEye[0] = false
-                setEye(newEye)
-                const newtype = [...type]
-                newtype[0] = 'text'
-                setType(newtype)
-              }} className="cursor-pointer w-4 h-4 absolute top-11.5 right-3"/>):
-              (<EyeOff onClick={()=>{
-                const newEye = [...eye]
-                newEye[0] = true
-                setEye(newEye)
-                const newtype = [...type]
-                newtype[0] = 'password'
-                setType(newtype)
-              }}  className="cursor-pointer w-4 h-4 absolute top-11.5 right-3"/>)
-            }
-          </div>
-          <div className="each-part mb-2 relative">
-            <p className="text-primary font-regular text-lg mb-2">Confirm password</p>
-            <input type={`${type[1]}`} onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
-              const val = e.target.value
-              setCPassword(val)
-              if(val != data.password){
-                setBorder('border-red-500')
-              }else{
-                setBorder('border-primary')
+            <div className="each-part mb-2 relative">
+              <p className="text-primary font-regular text-lg mb-2">Create password</p>
+              <input type={`${type[0]}`} onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
+                const val = e.target.value
+                const prevData = {...data}
+                prevData.password = val
+                setData(prevData)
+              }} placeholder="**********" maxLength={10} className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg h-8 w-78 px-3 py-2 border-2" />
+              {
+                eye[0] == true?(<EyeIcon onClick={()=>{
+                  const newEye = [...eye]
+                  newEye[0] = false
+                  setEye(newEye)
+                  const newtype = [...type]
+                  newtype[0] = 'text'
+                  setType(newtype)
+                }} className="cursor-pointer w-4 h-4 absolute top-11.5 right-3"/>):
+                (<EyeOff onClick={()=>{
+                  const newEye = [...eye]
+                  newEye[0] = true
+                  setEye(newEye)
+                  const newtype = [...type]
+                  newtype[0] = 'password'
+                  setType(newtype)
+                }}  className="cursor-pointer w-4 h-4 absolute top-11.5 right-3"/>)
               }
-            }} placeholder="**********" maxLength={10} className={`${border} placeholder:text-[#D5C3C3] outline-0 rounded-lg h-8 w-78 px-3 py-2 border-2`} />
-            {
-              eye[1] == true?(<EyeIcon onClick={()=>{
-                const newEye = [...eye]
-                newEye[1] = false
-                setEye(newEye)
-                const newtype = [...type]
-                newtype[1] = 'text'
-                setType(newtype)
-              }} className="cursor-pointer w-4 h-4 absolute top-11.5 right-3"/>):
-              (<EyeOff onClick={()=>{
-                const newEye = [...eye]
-                newEye[1] = true
-                setEye(newEye)
-                const newtype = [...type]
-                newtype[1] = 'password'
-                setType(newtype)
-              }}  className="cursor-pointer w-4 h-4 absolute top-11.5 right-3"/>)
-            }
+            </div>
+            <div className="each-part mb-2 relative">
+              <p className="text-primary font-regular text-lg mb-2">Confirm password</p>
+              <input type={`${type[1]}`} onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
+                const val = e.target.value
+                setCPassword(val)
+                if(val != data.password){
+                  setBorder('border-red-500')
+                }else{
+                  setBorder('border-primary')
+                }
+              }} placeholder="**********" maxLength={10} className={`${border} placeholder:text-[#D5C3C3] outline-0 rounded-lg h-8 w-78 px-3 py-2 border-2`} />
+              {
+                eye[1] == true?(<EyeIcon onClick={()=>{
+                  const newEye = [...eye]
+                  newEye[1] = false
+                  setEye(newEye)
+                  const newtype = [...type]
+                  newtype[1] = 'text'
+                  setType(newtype)
+                }} className="cursor-pointer w-4 h-4 absolute top-11.5 right-3"/>):
+                (<EyeOff onClick={()=>{
+                  const newEye = [...eye]
+                  newEye[1] = true
+                  setEye(newEye)
+                  const newtype = [...type]
+                  newtype[1] = 'password'
+                  setType(newtype)
+                }}  className="cursor-pointer w-4 h-4 absolute top-11.5 right-3"/>)
+              }
+            </div>
           </div>
+            <button type="submit" onClick={handleSubmit} className={`bg-primary py-2 font-bolds cursor-pointer hover:bg-secondary duration-300 hover:text-primary mt-2 text-white px-4 rounded-lg`}>Sign Up</button>
+            <p className={`z-50 font-light text-red-500 absolute top-[7vh] animate-show ${p[1]}`}>{p[0]}</p>
         </div>
-          <button type="submit" onClick={handleSubmit} className={`bg-primary py-2 font-bolds cursor-pointer hover:bg-secondary duration-300 hover:text-primary mt-2 text-white px-4 rounded-lg`}>Sign Up</button>
-          <p className={`z-50 font-light text-red-500 absolute top-[7vh] animate-show ${p[1]}`}>{p[0]}</p>
       </form>
     </div>
   </>)

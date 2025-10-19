@@ -48,6 +48,7 @@ export default function SignUp(){
           .then(data => {
             console.log(data.answer)
             if(data.answer.includes('success')){
+              console.log(data)
               router.push('../congratulation')
             }else if(data.answer == "account already exist" || data.answer == "Invalid login credentials"){
               router.push('../Login')

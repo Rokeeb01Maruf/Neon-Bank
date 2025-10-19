@@ -7,7 +7,7 @@ export default function Congrats(){
                 <Check strokeWidth={5} className="text-white w-20 h-20"/>
             </div>
             <p className="text-lg font-bolds">Email verified</p>
-            <p className="text-sm font-regular">You can proceed to finish setting up your account</p>
+            <p className="text-sm font-regular text-center">You can proceed to finish setting up your account</p>
       </div>
     )
 }

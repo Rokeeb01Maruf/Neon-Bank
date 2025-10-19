@@ -38,9 +38,10 @@ export default function LogIn() {
         <p className="font-light text-lg">Fortified security, seamless banking</p>
       </div>
       <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="right bg-light flex-50 h-screen flex flex-col justify-center items-center ">
-        {
+        <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex relative">
+          {
           disp[0] ?(
-          <div className="overLay absolute top-auto bottom-auto right-auto left-auto bg-white w-100 h-80 p-6 rounded-lg flex flex-col justify-center items-center">
+          <div className="overLay absolute top-0 left-0 bg-white w-full h-full p-6 rounded-lg flex flex-col justify-center items-center">
           {disp[1] ?(
             <X strokeWidth={2} onClick={()=>setDisplay(['','','','',''])} className="absolute cursor-pointer top-4 right-4"></X>
           ):null}
@@ -68,7 +69,6 @@ export default function LogIn() {
         </div>
           ) : null
         }
-        <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex">
           <img src="./Images/Neon-dark.png" className="w-10 h-10" alt="" />
           <h3 className="font-boldser text-4xl">Neon Bank</h3>
         </div>

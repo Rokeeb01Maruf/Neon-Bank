@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
             if(error){
                 return NextResponse.json({error: error.message})
             }else if(data){
-                return NextResponse.json({answer: "success", email: redirectUrl})
+                return NextResponse.json({answer: "success"})
             }
         }
 

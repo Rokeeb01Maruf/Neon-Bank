@@ -37,57 +37,59 @@ export default function LogIn() {
         <h2 className="font-boldser text-3xl mb-2">Neon Bank</h2>
         <p className="font-light text-lg">Fortified security, seamless banking</p>
       </div>
-      <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="right bg-light flex-50 h-screen flex flex-col justify-center items-center ">
-        <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex relative">
+      <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="right bg-light flex-50 h-screen flex justify-center items-center ">
+        <div className="relative flex flex-col justify-center items-center">
           {
-          disp[0] ?(
-          <div className="overLay absolute top-0 left-0 bg-white w-full h-full p-6 rounded-lg flex flex-col justify-center items-center">
-          {disp[1] ?(
-            <X strokeWidth={2} onClick={()=>setDisplay(['','','','',''])} className="absolute cursor-pointer top-4 right-4"></X>
-          ):null}
-          {disp[2] ?(
-           <div className="wrong w-full">
-            <div className="congrats bg-red-500 mx-auto flex rounded-full w-30 h-30 items-center justify-center">
-                <X strokeWidth={5} className="text-white w-20 h-20"/>
+            disp[0] ?(
+            <div className="overLay absolute top-0 left-0 bg-white w-full h-full p-6 rounded-lg flex flex-col justify-center items-center">
+            {disp[1] ?(
+              <X strokeWidth={2} onClick={()=>setDisplay(['','','','',''])} className="absolute cursor-pointer top-4 right-4"></X>
+            ):null}
+            {disp[2] ?(
+             <div className="wrong w-full">
+              <div className="congrats bg-red-500 mx-auto flex rounded-full w-30 h-30 items-center justify-center">
+                  <X strokeWidth={5} className="text-white w-20 h-20"/>
+              </div>
+              <p className=" font-regular text-sm text-center mt-5">Please check your Email and Password correctly</p>
             </div>
-            <p className=" font-regular text-sm text-center mt-5">Please check your Email and Password correctly</p>
+            ):null}
+            {disp[3] ?(
+             <div className="wrong w-full">
+              <div className="congrats bg-green-500 mx-auto flex rounded-full w-30 h-30 items-center justify-center">
+                  <Check strokeWidth={5} className="text-white w-20 h-20"/>
+              </div>
+              <p className=" font-regular text-sm text-center mt-5">Log in successfully</p>
+            </div>
+            ):null}
+            {disp[4]?(
+              <div className="flex items-center justify-between h-16">
+                <div className="w-16 h-16 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+              </div>
+            ): null }
           </div>
-          ):null}
-          {disp[3] ?(
-           <div className="wrong w-full">
-            <div className="congrats bg-green-500 mx-auto flex rounded-full w-30 h-30 items-center justify-center">
-                <Check strokeWidth={5} className="text-white w-20 h-20"/>
-            </div>
-            <p className=" font-regular text-sm text-center mt-5">Log in successfully</p>
+            ) : null
+          }
+          <div className="logo gap-x-2.5 mx-auto items-center justify-center mb-5 hidden max-[800]:flex">
+            <img src="./Images/Neon-dark.png" className="w-10 h-10" alt="" />
+            <h3 className="font-boldser text-4xl">Neon Bank</h3>
           </div>
-          ):null}
-          {disp[4]?(
-            <div className="flex items-center justify-between h-16">
-              <div className="w-16 h-16 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
-            </div>
-          ): null }
+          <h2 className="font-boldser text-3xl text-primary mb-8">Log in</h2>
+          <div className="each-part">
+            <p className="text-primary font-regular text-lg mb-2">Email</p>
+            <input type="email" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
+              const me = e.target.value
+              setMail(me)
+            }} placeholder="example@gmail.com" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg w-78 px-3 py-2 border-2" />
+          </div>
+          <div className="each-part mt-2">
+            <p className="text-primary font-regular text-lg mb-2">Password</p>
+            <input type="password" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
+              const me = e.target.value
+              setPassword(me)
+            }} maxLength={10} name="password" placeholder="********" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg w-78 px-3 py-2 border-2" />
+          </div>
+          <button type="submit" className="mt-8 bg-blue-500 w-78 border-2 border-primary cursor-pointer hover:bg-secondary transition duration-500 rounded-sm text-white font-bolds py-2">Log in</button>
         </div>
-          ) : null
-        }
-          <img src="./Images/Neon-dark.png" className="w-10 h-10" alt="" />
-          <h3 className="font-boldser text-4xl">Neon Bank</h3>
-        </div>
-        <h2 className="font-boldser text-3xl text-primary mb-8">Log in</h2>
-        <div className="each-part">
-          <p className="text-primary font-regular text-lg mb-2">Email</p>
-          <input type="email" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
-            const me = e.target.value
-            setMail(me)
-          }} placeholder="example@gmail.com" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg w-78 px-3 py-2 border-2" />
-        </div>
-        <div className="each-part mt-2">
-          <p className="text-primary font-regular text-lg mb-2">Password</p>
-          <input type="password" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
-            const me = e.target.value
-            setPassword(me)
-          }} maxLength={10} name="password" placeholder="********" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg w-78 px-3 py-2 border-2" />
-        </div>
-        <button type="submit" className="mt-8 bg-blue-500 w-78 border-2 border-primary cursor-pointer hover:bg-secondary transition duration-500 rounded-sm text-white font-bolds py-2">Log in</button>
       </form>
     </div>
   )

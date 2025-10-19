@@ -5,21 +5,26 @@ import { useEffect } from "react"
 export default function Congratulations(){
     const router = useRouter()
     useEffect(()=>{
-        const interval = setInterval(
-            async ()=>{
-                await fetch('../api/logic?action=verify',{method: "GET"})
-                .then(res=>res.json())
-                .then(data=>{
-                    if(data.verified){
+        let isActive = true
+        async function verify (){
+            try{
+                const res = await fetch('../api/logic?action=verify',{method: "GET"})
+                const data = await res.json()
+                if(data.verified){
                         router.push('../complete')
-                    }else{
+                    }else if(isActive){
                         console.log(data)
-                        return
+                        setTimeout(verify, 3000)
                     }
-                })
-            },3000
-        )
-        return ()=> clearInterval(interval)
+            }catch(err){
+                console.error("fetch failed: ",err);
+                if(isActive) setTimeout(verify, 3000)
+            }
+        }
+        verify()
+        return ()=>{
+            isActive = false
+        }
     },[])
     return(
         <div className="h-screen bg-light w-full flex justify-center items-center flex-col gap-y-2">

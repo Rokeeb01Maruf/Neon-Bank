@@ -209,7 +209,7 @@ export default function Complete() {
               <p className="text-primary font-regular text-lg mb-2">Fullname</p>
               <input type="text" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
                 const val = e.target.value
-                let prevData = {...data}
+                const prevData = {...data}
                 prevData.Fullname = val
                 setData(prevData)
               }} placeholder="John Doe" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg h-8 w-78 px-3 py-2 border-2" />
@@ -218,7 +218,7 @@ export default function Complete() {
               <p className="text-primary font-regular text-lg mb-2">Nickname</p>
               <input type="text" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
                 const val = e.target.value
-                let prevData = {...data}
+                const prevData = {...data}
                 prevData.Nickname = val
                 setData(prevData)
               }} placeholder="Johnny" className="border-primary placeholder:text-[#D5C3C3] outline-0 rounded-lg h-8 w-78 px-3 py-2 border-2" />
@@ -227,7 +227,7 @@ export default function Complete() {
               <p className="text-primary font-regular text-lg mb-2">Address</p>
               <input type="text" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
                 const val = e.target.value
-                let prevData = {...data}
+                const prevData = {...data}
                 prevData.Address = val
                 setData(prevData)}} placeholder="Under G, Ogomoso,Nigeria" className="border-primary placeholder:text-[#D5C3C3] h-8 outline-0 rounded-lg w-78 px-3 py-2 border-2" />
             </div>
@@ -235,7 +235,7 @@ export default function Complete() {
               <p className="text-primary font-regular text-lg mb-2">BVN</p>
               <input type="text" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
                 const val = parseInt(e.target.value)
-                let prevData = {...data}
+                const prevData = {...data}
                 prevData.BVN = val.toString()
                 setData(prevData)}} maxLength={11} pattern='[0-9]+' placeholder="12345678901" className="border-primary placeholder:text-[#D5C3C3] h-8 outline-0 rounded-lg w-78 px-3 py-2 border-2" />
             </div>
@@ -245,7 +245,7 @@ export default function Complete() {
                 <p className="absolute font-regular my-auto pt-1.5 p-1 text-white pr-2 rounded-l-lg bg-primary h-8">+234</p>
                 <input type="text" onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
                   const val = parseInt(e.target.value)
-                  let prevData = {...data}
+                  const prevData = {...data}
                   prevData.phone = `+234${val}`
                   setData(prevData)}} maxLength={10} pattern='[0-9]+' className="border-primary placeholder:text-[#D5C3C3] pl-11 h-8 outline-0 rounded-lg w-78 px-3 py-2 border-2" />
               </div>
@@ -254,11 +254,10 @@ export default function Complete() {
               <p className="text-primary font-regular text-lg mb-2">Date of Birth</p>
               <input type="date"  onInput={(e:React.ChangeEvent<HTMLInputElement>)=>{
                 const val = e.target.value
-                let prevData = {...data}
+                const prevData = {...data}
                 prevData.Date = val
                 setData(prevData)}} className="text-secondary font-regular text-lg mb-2" />
             </div>
-            
             <button className='mt-1 bg-secondary ml-[80%] transition duration-300 hover:bg-primary hover:text-blue-300 text-white px-4 py-1.5 rounded-sm cursor-pointer font-bolds ' onClick={handleFirst}>Next</button>
           </div>
           <div className={`submit ${disp[1]}`}>
@@ -268,7 +267,7 @@ export default function Complete() {
               <input type="file" onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{
                 const val = e.target.files?.[0]
                 if(val){
-                  let prevData = {...data}
+                  const prevData = {...data}
                   prevData.Profile = val
                   setData(prevData)
                   const url = URL.createObjectURL(val)

@@ -8,7 +8,7 @@ export default function Complete() {
   const router = useRouter()
     const [flex, setFlex] = useState(['flex', 'hidden'])
     const [img, setImg] = useState('/Images/p.png')
-      const [display, setDisp] = useState(['','','','',''])
+    const [display, setDisp] = useState(['','','','',''])
     const [show, setShow] = useState('hidden')
     const [disp, setDisplay] = useState(["block","hidden"])
     const[p, setP] = useState('')
@@ -284,8 +284,8 @@ export default function Complete() {
             <button onClick={handleB} className='bg-secondary block transition duration-300 hover:bg-primary hover:text-blue-300 text-white px-4 py-1.5 rounded-sm cursor-pointer font-bolds '>Back</button>
             </div>
             <p className={`absolute ${show} bg-white text-red-600 top-[7vh] text-shadow-2xs font-light rounded-sm px-1`}>{p}</p>
-          </form>
         </div>
+          </form>
     </div>
   </>
   )

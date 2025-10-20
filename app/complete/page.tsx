@@ -168,7 +168,7 @@ export default function Complete() {
         <p className="font-light text-lg">Fortified security, seamless banking</p>
       </div>
       <form className="right bg-light flex-50 min-h-screen flex justify-center items-center">
-        <div className="relative flex flex-col justify-center items-center">
+        <div className="relative flex flex-col justify-center items-center relative">
             {
               display[0] ?(
               <div className="overLay absolute top-0 left-0 bg-white w-full h-full p-6 rounded-lg flex flex-col justify-center items-center">
@@ -257,8 +257,7 @@ export default function Complete() {
                   const prevData = {...data}
                   prevData.Date = val
                   setData(prevData)}} className="text-secondary font-regular text-lg mb-2" />
-              </div>
-              
+              </div>              
               <button className='mt-1 bg-secondary ml-[80%] transition duration-300 hover:bg-primary hover:text-blue-300 text-white px-4 py-1.5 rounded-sm cursor-pointer font-bolds ' onClick={handleFirst}>Next</button>
             </div>
             <div className={`submit ${disp[1]}`}>

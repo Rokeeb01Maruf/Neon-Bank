@@ -140,7 +140,7 @@ export default function Main(){
     },[])
     return(
         // main cotainer
-        <div className="max-h-fit flex overflow-hidden max-[1188]:mx-17 max-[1164]:mx-15 max-[1138]:mx-14 max-[1134]:mx-10
+        <div className="max-h-screen flex overflow-hidden max-[1188]:mx-17 max-[1164]:mx-15 max-[1138]:mx-14 max-[1134]:mx-10
          max-[1108]:mx-0 max-[1320]:mx-35 max-[1306]:mx-32 max-[1284]:mx-29 max-[1255]:mx-25 max-[1224]:mx-20 
          gap-x-12.5 mx-37.5 border-x-2 border-primary
           bg-light">

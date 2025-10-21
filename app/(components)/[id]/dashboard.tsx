@@ -25,7 +25,7 @@ export default function Dashboard({handleSavings, handleTransfer, bal,handleLoan
             <button onClick={handleLoan} className=" max-[582]:truncate rounded-lg max-[496]:justify-between max-[666]:text-sm max-[496]:max-w-[250px] max-[717]:text-lg hover:bg-primary hover:text-white font-bolds max-[918]:text-xl max-[582]:text-[.6rem] max-[582]:font-regular text-2xl flex-1/3 flex items-center justify-between max-sm:px-2 max-sm:py-1 px-4 py-2 bg-white shadow-lg"><Banknote className="text-white max-[500]:h-2 rounded-sm p-1 w-[28px] bg-secondary h-[28] max-[500]:w-2"/><p className="max-[496]:text-sm">Apply for loan</p></button>
         </div>
         <div className="w-full max-w-full flex mt-5 h-full max-sm:h-full gap-x-4 max-sm:flex-col max-sm:gap-y-2">
-            <div className="flex-2/3 p-4 bg-white rounded-lg shadow-lg h-fit min-h-50 max-sm:mb-2">
+            <div className="flex-2/3 p-4 bg-white rounded-lg shadow-lg h-fit max-sm:max-h-50 max-sm:mb-2">
             <p className="font-regular text-sm text-center">Recent transactions</p>
             {
                 transfer.length != 0 ? (<div className="overflow-y-scroll">
@@ -47,7 +47,7 @@ export default function Dashboard({handleSavings, handleTransfer, bal,handleLoan
                 </div>) : null
             }
             </div>
-            <div className="flex-1/3 max-sm:w-full p-4 bg-white rounded-lg shadow-lg h-full mb-2 min-h-full max-h-18.75">
+            <div className="flex-1/3 max-sm:w-full p-4 bg-white rounded-lg shadow-lg h-full mb-2 min-h-full max-sm:max-h-18.75">
                 <p className="font-regular text-sm">Analysis</p>
             </div>
         </div>

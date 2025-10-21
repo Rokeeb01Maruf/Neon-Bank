@@ -108,11 +108,11 @@ export default function Transfer({num, name, bal, update}:{num: string, name: st
                             <img src="./Images/Neon-dark.png" alt="" className="w-4 h-4" />
                         </div>
                     </div>
-                    <div className="eachfield cursor-pointer w-full mb-4 ">
+                    <div className="eachfield cursor-pointer w-full mb-4 max-w-full">
                         <p className="pb-2 font-bolds">To</p>
                         <div className="flex truncate items-center hover:bg-gray-200 h-9 w-full justify-between border-gray-600 border-2 px-2 py-1 rounded-lg">
-                            <p>{data.name}</p>
-                            <p>{account.name}</p>
+                            <p className="truncate">{data.name}</p>
+                            <p className="truncate">{account.name}</p>
                         </div>
                     </div>
                     <fieldset className="border rounded-lg px-2">

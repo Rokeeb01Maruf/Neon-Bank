@@ -28,7 +28,7 @@ export default function Dashboard({handleSavings, handleTransfer, bal,handleLoan
             <div className="flex-2/3 p-4 bg-white rounded-lg shadow-lg h-full min-h-full max-sm:mb-2">
             <p className="font-regular text-sm text-center">Recent transactions</p>
             {
-                transfer.length != 0 ? (<div className="overflow-y-scroll h-full">
+                transfer.length != 0 ? (<div className="overflow-y-scroll">
                     {
                         transfer.map((e, index)=>(<div key={index} className="flex border-t border-gray-400 mt-2 items-center justify-between font-regular text-sm py-1">
                             <div>

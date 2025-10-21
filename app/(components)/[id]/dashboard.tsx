@@ -28,7 +28,7 @@ export default function Dashboard({handleSavings, handleTransfer, bal,handleLoan
             <div className="flex-2/3 p-4 bg-white rounded-lg shadow-lg h-full min-h-full max-sm:mb-2">
             <p className="font-regular text-sm text-center">Recent transactions</p>
             {
-                transfer.length != 0 ? (<div className="overflow-y-scroll max-[500]:h-25 h-full">
+                transfer.length != 0 ? (<div className="overflow-y-scroll max-[500]:h-50 h-full">
                     {
                         transfer.map((e, index)=>(<div key={index} className="flex border-t border-gray-400 mt-2 items-center justify-between font-regular text-sm py-1">
                             <div>
@@ -47,7 +47,7 @@ export default function Dashboard({handleSavings, handleTransfer, bal,handleLoan
                 </div>) : null
             }
             </div>
-            <div className="flex-1/3 max-[500]-h-12.5 max-sm:w-full p-4 bg-white rounded-lg shadow-lg h-full mb-2 min-h-full">
+            <div className="flex-1/3 max-[500]-h-25 max-sm:w-full p-4 bg-white rounded-lg shadow-lg h-full mb-2 min-h-full">
                 <p className="font-regular text-sm">Analysis</p>
             </div>
         </div>

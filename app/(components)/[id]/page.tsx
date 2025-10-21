@@ -150,8 +150,8 @@ export default function Main(){
             }} className={`bg-[rgba(0,0,0,0.7)] w-full h-full cursor-pointer absolute ${hidden == "hidden" && "hidden"}`}/>
             <aside className={`flex-1/4 max-[967]:absolute ${hidden == "hidden" ? "max-[966]:hidden":"flex" }
              duration-300 max-[966]:z-10 max-[984]:max-w-46 
-                max-[1030]:max-w-60 max-[1030]:pl-10 max-[1024]:max-w-55 max-[1024]:pl-8 max-[1006]:max-w-50 pl-12 min-h-screen
-                  h-full max-h-screen shadow-mg justify-between flex-col items-end text-primary
+                max-[1030]:max-w-60 max-[1030]:pl-10 max-[1024]:max-w-55 max-[1024]:pl-8 max-[1006]:max-w-50 pl-12 
+                  h-full shadow-mg justify-between flex-col items-end text-primary
                    pt-5 bg-white`}>
                 <div className="flex flex-col items-end">
                     <Link href='' className="logo w-max flex max-[966]:mt-10 gap-x-2.5 pr-15 max-[1030]:pr-10">

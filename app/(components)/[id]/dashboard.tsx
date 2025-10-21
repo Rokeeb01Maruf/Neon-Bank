@@ -26,28 +26,28 @@ export default function Dashboard({handleSavings, handleTransfer, bal,handleLoan
         </div>
         <div className="w-full max-w-full flex mt-5 h-full max-sm:h-full gap-x-4 max-sm:flex-col max-sm:gap-y-2">
             <div className="flex-2/3 p-4 bg-white rounded-lg shadow-lg h-fit max-sm:max-h-50 max-sm:mb-2">
-            <p className="font-regular text-sm text-center">Recent transactions</p>
-            {
-                transfer.length != 0 ? (<div className="overflow-y-scroll">
-                    {
-                        transfer.map((e, index)=>(<div key={index} className="flex border-t border-gray-400 mt-2 items-center justify-between font-regular text-sm py-1">
-                            <div>
-                                <ArrowUpCircle fill="green" stroke="#b9f8cf"/>
-                            </div>
-                            <div className="">
-                                <p className="text-lg font-bolds max-sm:text-sm">Transfer to {e.name}</p>
-                                <p className="font-regular max-sm:text-sm">{e.bank.toLocaleLowerCase()}, {e.number}</p>
-                            </div>
-                            <div>
-                                <p className="font-bold max-sm:text-sm">&#8358; {e.amount.toFixed(2)}</p>
-                                <p className="text-green-200 text-sm px-1 font-regular rounded-sm bg-green-700">successful</p>
-                            </div>
-                        </div>))
-                    }
-                </div>) : null
-            }
+                <p className="font-regular text-sm text-center">Recent transactions</p>
+                {
+                    transfer.length != 0 ? (<div className="overflow-y-scroll">
+                        {
+                            transfer.map((e, index)=>(<div key={index} className="flex border-t border-gray-400 mt-2 items-center justify-between font-regular text-sm py-1">
+                                <div>
+                                    <ArrowUpCircle fill="green" stroke="#b9f8cf"/>
+                                </div>
+                                <div className="">
+                                    <p className="text-lg font-bolds max-sm:text-sm">Transfer to {e.name}</p>
+                                    <p className="font-regular max-sm:text-sm">{e.bank.toLocaleLowerCase()}, {e.number}</p>
+                                </div>
+                                <div>
+                                    <p className="font-bold max-sm:text-sm">&#8358; {e.amount.toFixed(2)}</p>
+                                    <p className="text-green-200 text-sm px-1 font-regular rounded-sm bg-green-700">successful</p>
+                                </div>
+                            </div>))
+                        }
+                    </div>) : null
+                }
             </div>
-            <div className="flex-1/3 max-sm:w-full p-4 bg-white rounded-lg shadow-lg h-full mb-2 min-h-full max-sm:min-h-full max-sm:h-18.75">
+            <div className="flex-2/3 p-4 bg-white rounded-lg shadow-lg h-fit max-sm:max-h-50 max-sm:mb-2">
                 <p className="font-regular text-sm">Analysis</p>
             </div>
         </div>

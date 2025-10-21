@@ -98,7 +98,7 @@ export default function Transfer({num, name, bal, update}:{num: string, name: st
     return(
         <div>
             <p className="font-bolds text-2xl">Transfer</p>
-            <div className="flex max-[810]:flex-col mt-4 gap-5">
+            <div className="flex max-[810]:flex-col max-w-full mt-4 gap-5">
                 <div className="flex-2/3">
                     <div className="eachfield cursor-pointer mb-4">
                         <p className="pb-2 font-bolds">From</p>

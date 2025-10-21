@@ -47,7 +47,7 @@ export default function Dashboard({handleSavings, handleTransfer, bal,handleLoan
                 </div>) : null
             }
             </div>
-            <div className="flex-1/3 max-sm:w-full p-4 bg-white rounded-lg shadow-lg h-full mb-2 min-h-full max-sm:max-h-18.75">
+            <div className="flex-1/3 max-sm:w-full p-4 bg-white rounded-lg shadow-lg h-full mb-2 min-h-full max-sm:min-h-full max-sm:max-h-18.75">
                 <p className="font-regular text-sm">Analysis</p>
             </div>
         </div>

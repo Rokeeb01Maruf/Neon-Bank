@@ -110,7 +110,7 @@ export default function Transfer({num, name, bal, update}:{num: string, name: st
                     </div>
                     <div className="eachfield cursor-pointer w-full mb-4 max-w-full">
                         <p className="pb-2 font-bolds">To</p>
-                        <div className="flex max-[500]:flex-col items-center hover:bg-gray-200 h-9 w-full justify-between border-gray-600 border-2 px-2 py-1 rounded-lg">
+                        <div className="flex max-[500]:flex-col max-[500]:h-fit items-center hover:bg-gray-200 h-9 w-full justify-between border-gray-600 border-2 px-2 py-1 rounded-lg">
                             <p className="truncate">{data.name}</p>
                             <p className="truncate">{account.name}</p>
                         </div>

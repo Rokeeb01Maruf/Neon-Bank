@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link";
+import {useRouter} from "next/navigation"
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -16,8 +17,8 @@ export default function Home() {
         <nav className={`nav max-[990]:border-t-light max-[990]:border-t ${show} min-[990]:flex flex items-center font-bolds max-[990]:absolute max-[990]:top-15 max-[990]:w-full
         max-[990]:bg-primary max-[990]:items-start max-[990]:left-0 max-[990]:items-left z-10 max-[990]:flex-col gap-x-12`}>
           <Link href='' className="hover:text-blue-400 max-[990]:hover:bg-blue-400 max-[990]:font-regular max-[990]:hover:text-primary max-[990]:w-full max-[990]:px-4 transition ease-in-out duration-500 px-5 py-2">Home</Link>
-          <Link href='' className="hover:text-blue-400 max-[990]:hover:bg-blue-400 max-[990]:font-regular max-[990]:hover:text-primary transition max-[990]:px-4 max-[990]:w-full  ease-in-out duration-500 px-5 py-2">Dashboard</Link>
-          <Link href='' className="hover:text-blue-400 max-[990]:hover:bg-blue-400 max-[990]:font-regular max-[990]:hover:text-primary transition max-[990]:px-4 ease-in-out max-[990]:w-full duration-500 px-5 py-2">Transaction</Link>
+          <Link href='/Login' className="hover:text-blue-400 max-[990]:hover:bg-blue-400 max-[990]:font-regular max-[990]:hover:text-primary transition max-[990]:px-4 max-[990]:w-full  ease-in-out duration-500 px-5 py-2">Dashboard</Link>
+          <Link href='/Login' className="hover:text-blue-400 max-[990]:hover:bg-blue-400 max-[990]:font-regular max-[990]:hover:text-primary transition max-[990]:px-4 ease-in-out max-[990]:w-full duration-500 px-5 py-2">Transaction</Link>
           <Link href='/Login' className="hover:text-blue-400 max-[990]:hover:bg-blue-400 max-[990]:font-regular max-[990]:hover:text-primary transition max-[990]:px-4 ease-in-out max-[990]:w-full duration-500 px-5 py-2">Log in</Link>
           <Link href='/Signup' className="bg-secondary max-[990]:bg-primary rounded-3xl max-[990]:px-4 max-[990]:rounded-none max-[990]:font-regular hover:bg-blue-400 max-[990]:w-full  transition duration-500 hover:text-primary px-5 py-2">Sign Up</Link>
         </nav>
@@ -39,7 +40,7 @@ export default function Home() {
         <div className="hero">
           <h2 className="font-boldser text-primary max-sm:text-2xl max-[871]:text-3xl max-[871]:py-6  py-10 text-4xl">Fortified security, seamless banking</h2>
           <p className="font-regular text-hash w-full :">We provide a safe and secured environment for you to make transfers, payments and track your accounteasily with our internet banking anytimeand anywhere. Sign up or log in to our internet banking now.</p>
-          <button className="my-5 font-bolds hover:bg-blue-400 transition duration-500 hover:text-primary p bg-secondary rounded-3xl px-5 py-2 cursor-pointer text-white">Get Started</button>
+          <button onClick={()=>router.push("./Signup")} className="my-5 font-bolds hover:bg-blue-400 transition duration-500 hover:text-primary p bg-secondary rounded-3xl px-5 py-2 cursor-pointer text-white">Get Started</button>
         </div>
         <img src="/Images/hero.png" className="rotate-z-12 max-[981]:w-[500] max-[500]:w-full  max-[981]:mx-auto  w-91.5  min-[980]:animate-roll" alt="" />
       </main>

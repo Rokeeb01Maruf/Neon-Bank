@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
+  const router = useRouter()
   const [show, setShow] = useState('hidden')
   const [switc, setSwitch] = useState(1)
   return (
